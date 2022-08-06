@@ -1,37 +1,37 @@
 'use strict'
+
 function createCalculator (initValue){
     let calcControl = {
-        setValue: "initial value",
-        memoryRead: function() {
+        setValue: 'initValue',
+        getValue: function() {
             return this.setValue
         },
+        sum: function(increaseValue){
+            this.setValue = this.getValue()+increaseValue;
+            return this.getValue() ;
+        },
+        mult: function(multValue){
+            this.setValue = this.getValue() * multValue;
+            return this.getValue() ;
+        },
+        sub:  function(subValue){
+            this.setValue = this.getValue() - subValue;
+            return this.getValue();
+        },
+        div:  function(divValue){
+            this.setValue = this.getValue() /divValue;
+            return this.getValue();
+        },
     }
-    calcControl.setValue = initValue;
-    let result = {
-        sum: (increaseValue)=>{
-            calcControl.setValue = increaseValue + calcControl.memoryRead();
-            return calcControl.memoryRead();
-        },
-        mult: (multValue)=>{
-            calcControl.setValue = multValue * calcControl.memoryRead();
-            return calcControl.memoryRead();
-        },
-        sub: (subValue)=>{
-            calcControl.setValue = calcControl.memoryRead() - subValue
-            return calcControl.memoryRead();
-        },
-        div: (divValue)=>{
-            calcControl.setValue = calcControl.memoryRead() / divValue
-            return calcControl.memoryRead();
-        }
-    }
-    return result
+    calcControl.setValue = initValue
+    return calcControl
 }
-let calc = createCalculator(10)
-console.log(calc.sum(5)); /// 15
-console.log(calc.mult(10)); // 150
-console.log(calc.sub(40)); // 110
-console.log(calc.div(10)); // 11
+let calc  = createCalculator(10);
+console.log(calc .sum(5)); /// 15
+console.log(calc .mult(10)); // 150
+console.log(calc .sub(40)); // 110
+console.log(calc .div(10)); // 11
+
 
 console.log('--------task 2 -----------------------')
 
