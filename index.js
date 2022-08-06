@@ -2,27 +2,27 @@
 function createCalculator (initValue){
     let calcControl = {
         setValue: "initial value",
-        getValue: function() {
+        memoryRead: function() {
             return this.setValue
         },
     }
     calcControl.setValue = initValue;
     let result = {
         sum: (increaseValue)=>{
-            calcControl.setValue = increaseValue + calcControl.getValue();
-            return calcControl.getValue();
+            calcControl.setValue = increaseValue + calcControl.memoryRead();
+            return calcControl.memoryRead();
         },
         mult: (multValue)=>{
-            calcControl.setValue = multValue * calcControl.getValue();
-            return calcControl.getValue();
+            calcControl.setValue = multValue * calcControl.memoryRead();
+            return calcControl.memoryRead();
         },
         sub: (subValue)=>{
-            calcControl.setValue = calcControl.getValue() - subValue
-            return calcControl.getValue();
+            calcControl.setValue = calcControl.memoryRead() - subValue
+            return calcControl.memoryRead();
         },
         div: (divValue)=>{
-            calcControl.setValue = calcControl.getValue() / divValue
-            return calcControl.getValue();
+            calcControl.setValue = calcControl.memoryRead() / divValue
+            return calcControl.memoryRead();
         }
     }
     return result
