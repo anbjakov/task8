@@ -3,24 +3,24 @@
 function createCalculator (initValue){
     let calcControl = {
         setValue: 'initValue',
-        getValue: function() {
+        readMemory: function() {
             return this.setValue
         },
         sum: function(increaseValue){
-            this.setValue = this.getValue()+increaseValue;
-            return this.getValue() ;
+            this.setValue = this.readMemory()+increaseValue;
+            return this.readMemory() ;
         },
         mult: function(multValue){
-            this.setValue = this.getValue() * multValue;
-            return this.getValue() ;
+            this.setValue = this.readMemory() * multValue;
+            return this.readMemory() ;
         },
         sub:  function(subValue){
-            this.setValue = this.getValue() - subValue;
-            return this.getValue();
+            this.setValue = this.readMemory() - subValue;
+            return this.readMemory();
         },
         div:  function(divValue){
-            this.setValue = this.getValue() /divValue;
-            return this.getValue();
+            this.setValue = this.readMemory() /divValue;
+            return this.readMemory();
         },
     }
     calcControl.setValue = initValue
