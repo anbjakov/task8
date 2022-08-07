@@ -37,10 +37,10 @@ console.log('------- new function calc-------------');
 function simpleCalcSolution (initResult) {
     let result = initResult;
     let calcControls = {
-        sum: (sumValue)=>{result = result + sumValue; return result},
-        mult: (multValue)=>{result = result * multValue; return result},
-        sub: (subValue)=>{result = result - subValue; return result},
-        div: (divValue)=>{result = result / divValue; return result}
+        sum: (sumValue)=>{return result = result + sumValue;},
+        mult: (multValue)=>{return result = result * multValue;},
+        sub: (subValue)=>{return result = result - subValue;},
+        div: (divValue)=>{return result = result / divValue;}
     }
     return calcControls
 }
